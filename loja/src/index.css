@@ -69,23 +69,33 @@ img {
 .anuncio {
     background-color: var(--background);
     color: var(--text-color);
-    text-align: center;
-    padding: 8px 0;
+    padding: 10px 0;
     font-size: 14px;
-    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.anuncio-conteudo p {
+.anuncio-conteudo {
     display: inline-block;
-    animation: textoCorrido 10s linear infinite;
+    white-space: nowrap; 
+    padding-left: 100%;   
+    animation: textoCorrido 40s linear infinite;
+}
+
+
+.anuncio-conteudo span {
+    margin-right: 300px; 
+    display: inline-block;
 }
 
 @keyframes textoCorrido {
     0% {
-        transform: translateX(100%);
+        transform: translateX(0%);
     }
     100% {
-        transform: transleteY(-100%);
+        transform: translateX(-100%);
     }
 }
 
@@ -108,4 +118,53 @@ img {
 .topo nav {
     display: flex;
     gap: 20px;
+}
+
+.topo nav a {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--text-base);
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.topo nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: 0;
+
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.topo nav a:hover::after{
+    width: 90%;
+
+}
+
+.topo nav a:hover {
+    color: var(--primary-color);
+}
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 768px){
+    .topo {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
+    }
+    .topo picture {
+        max-width: 30px ;
+    }
+    .topo nav a {
+        font-size: 12px;
+    }
 }
