@@ -48,7 +48,7 @@ img {
 
 .btn {
     margin-top: 20px;
-    padding: 12px 32px;
+    padding: 10px 30px;
     background: var(--gradient1);
     border: none;
     border-radius: 10px;
@@ -88,6 +88,7 @@ img {
 .anuncio-conteudo span {
     margin-right: 300px; 
     display: inline-block;
+    color: var(--title);
 }
 
 @keyframes textoCorrido {
@@ -104,7 +105,7 @@ img {
     justify-content: space-between;
     align-items: center;
     padding: 10px 100px;
-    background-color: var(--text-color);
+    background-color: var(--title);
     position: sticky;
     top: 0;
     width: 100%;
